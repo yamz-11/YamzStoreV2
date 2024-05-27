@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Jualan Sederhana</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>YAMZ STORE</h1>
+        <div class="product-grid">
+            <!-- Contoh produk 1 -->
+            <div class="product">
+                <img src="images/yt.png" alt="Produk 1" class="product-image" onclick="showDescription('desc1')">
+                <p class="product-name">Produk 1</p>
+                <div class="product-description" id="desc1">
+                    <p>Deskripsi produk 1...<br>
+                        -1<br>
+                        -2<br>
+                        -3<br>
+                        2jah<br><br>
+                        ahsjhjdhjsjdjsjdjsdjjsjsjsjk<br>
+                        sjdksjdjsd<br><br>
+                        sndnsdjs
+                    </p>
+                    <button onclick="selectPaymentMethod('Produk 1')">Beli Produk</button>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="images/spotify.jpg" alt="Produk 2" class="product-image" onclick="showDescription('desc2')">
+                <p class="product-name">Produk 2</p>
+                <div class="product-description" id="desc2">
+                    <p>Deskripsi produk 2...</p>
+                    <button onclick="selectPaymentMethod('Produk 2')">Beli Produk</button>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="images/netflix.png" alt="Produk 3" class="product-image" onclick="showDescription('desc3')">
+                <p class="product-name">Produk 3</p>
+                <div class="product-description" id="desc3">
+                    <p>Deskripsi produk 3...</p>
+                    <button onclick="selectPaymentMethod('Produk 3')">Beli Produk</button>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="images/canva.png" alt="Produk 4" class="product-image" onclick="showDescription('desc4')">
+                <p class="product-name">Produk 4</p>
+                <div class="product-description" id="desc4">
+                    <p>Deskripsi produk 2...</p>
+                    <button onclick="selectPaymentMethod('Produk 2')">Beli Produk</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="about-us">
+            <h2>Tentang Kami</h2>
+            <p>Selamat datang di toko online kami. Kami menyediakan berbagai macam produk berkualitas dengan harga terjangkau. Kami berkomitmen untuk memberikan pelayanan terbaik kepada pelanggan kami.</p>
+        </div>
+    </div>
+
+   
+
+    <!-- Modal Pilihan Pembayaran -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2>Pilih Metode Pembayaran</h2>
+            <button onclick="payWith('Whatapps')">Whatapps</button>
+            <button onclick="payWith('Dana')">Dana</button>
+            <button onclick="payWith('GoPay')">GoPay</button>
+            <button onclick="payWith('OVO')">OVO</button>
+            <button onclick="payWith('ShopeePay')">ShopeePay</button>
+        </div>
+    </div>
+
+    <!-- Modal Informasi Dana -->
+    <div id="danaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeDanaModal()">&times;</span>
+            <h2>Informasi Pembayaran Dana</h2>
+            <img id="qrisImage" alt="QRIS Dana" class="qris-image">
+            <p>Nomor Dana: 082278501731</p>
+            <input type="file" id="uploadBukti" accept="image/*" onchange="previewImage(event)">
+            <img id="buktiImage" class="bukti-image" style="display:none;">
+            <button onclick="confirmPayment('Dana')">Konfirmasi Pembayaran</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Wiratama.</p>
+        <p>Kontak kami: <a href="mailto:Wiratamajrz@gmail.com">EMAIL</a></p>
+    </footer>
+    
+</body>
+</html>
